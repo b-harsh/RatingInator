@@ -1,10 +1,6 @@
-# 🛍️ Ratinginator - Ratings and Review System
-
-Ratinginator is a full-stack web application that allows users to view products, submit reviews and ratings (with images or videos), and see others’ feedback. Inspired by Amazon-style reviews.
+# 🛒 Ratinginator - Ratings and Review System
 
 ---
-
-# 🛒 Product Review System
 
 A full-stack product review system built using **React**, **Node.js**, and **MySQL** that enables users to view, rate, and review products with authentication and media upload support.
 
