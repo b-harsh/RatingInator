@@ -62,6 +62,29 @@ ratinginator/
 
 ```
 
+## 🛠️ Setup Instructions
+
+### 📌 Prerequisites
+
+- [Node.js](https://nodejs.org/) ≥ v14  
+- [MySQL](https://www.mysql.com/)  
+- npm or yarn package manager
+
+---
+
+### 📌 Environment Configuration (`.env`)
+
+Create a `.env` file in the backend root directory and add the following variables:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=your_password
+DB_NAME=ratinginator
+JWT_SECRET=your_super_secret_key
+
+```
+
 ## 📊 Database Schema & ER Diagram
 
 # 📁 Tables
@@ -124,3 +147,83 @@ node index.js
 ```
 
 **Runs on:** [http://localhost:5000](http://localhost:5000)
+
+
+# Backend
+
+```
+
+cd client
+npm install
+npm run dev
+
+```
+
+**Runs on:** [[http://localhost:5173](http://localhost:5173)
+
+
+## 🧪 Testing Guide
+
+### 🔐 Authentication Flow
+
+- **Sign Up** → `POST /signup`
+- **Login** → `POST /login` (Redirects to `/` after login)
+
+---
+
+### 🛍️ Product Display
+
+- Products load with **images**, **names**, and **average ratings**
+- Click **"Rate Now"** → Opens modal to:
+  - Rate
+  - Write a review
+  - Upload image/video
+
+- On submission:
+  - Product's **average rating** updates
+
+- Click **"Reviews and Ratings"** → View all reviews in detail
+
+---
+
+### 🧩 Review Features
+
+- ✅ Edit/Delete own review
+- 🔍 Filter reviews by **rating** or **tag**
+- 🔃 Sort reviews by **date** or **rating**
+
+---
+
+### 🔒 Protected Routes
+
+- ⭐ **Rating a product requires login**
+- ✍️ **Only one review per product per user**
+- 🔐 **Users can only edit/delete their own reviews**
+
+---
+
+## 📎 Media Uploads
+
+- Uploaded media is stored in:  
+  `/server/uploads/`
+
+- Served via:  
+  `http://localhost:5000/uploads/<filename>`
+
+---
+
+## 🧪 Postman / API Testing
+
+| Method | Route               | Description             |
+|--------|---------------------|-------------------------|
+| POST   | `/api/auth/signup`  | Signup user             |
+| POST   | `/api/auth/login`   | Login user              |
+| GET    | `/api/products`     | Get all products        |
+| GET    | `/api/products/:id` | Get product name        |
+| GET    | `/api/reviews/:id`  | Get reviews for product |
+| POST   | `/api/reviews/:id`  | Submit review           |
+| PUT    | `/api/reviews/:id`  | Edit review             |
+| DELETE | `/api/reviews/:id`  | Delete review           |
+
+
+
