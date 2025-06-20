@@ -31,3 +31,32 @@ Ratinginator is a full-stack web application that allows users to view products,
 
 ## 📦 Folder Structure
 
+ratinginator/
+├── client/                   # Frontend (React)
+│   ├── components/           # Reusable UI components (Navbar, StarRating, ProductCard, etc.)
+│   ├── pages/                # Page-level components (Home, Login, Signup, ProductReview)
+│   ├── App.jsx               # Main app with routes
+│   ├── api.js                # Axios instance with auth interceptor
+│   ├── index.css             # Tailwind CSS styles
+│   └── main.jsx              # React DOM rendering
+│
+├── server/                   # Backend (Node.js + Express)
+│   ├── controllers/          # Logic for auth, product, and review routes
+│   │   ├── authController.js
+│   │   ├── productController.js
+│   │   └── reviewController.js
+│   ├── middleware/           # JWT verification middleware
+│   │   └── authMiddleware.js
+│   ├── routes/               # Express route definitions
+│   │   ├── authRoutes.js
+│   │   ├── productRoutes.js
+│   │   └── reviewRoutes.js
+│   ├── uploads/              # Uploaded media (images/videos for reviews)
+│   ├── db.js                 # MySQL DB connection setup
+│   └── index.js              # Express server entry point
+│
+├── .env                      # Environment variables
+├── package.json              # Project metadata and dependencies
+└── README.md                 # Project documentation
+
+
