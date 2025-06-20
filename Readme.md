@@ -60,6 +60,7 @@ ratinginator/
 ├── package.json              # Backend dependencies
 └── README.md                 # Project Documentation
 
+```
 
 ##📊 Database Schema & ER Diagram
 
