@@ -64,9 +64,9 @@ ratinginator/
 
 ## 📊 Database Schema & ER Diagram
 
-📁 Tables
+# 📁 Tables
 
-# users
+ users
 
 | Field    | Type         | Key | Extra           |
 | -------- | ------------ | --- | --------------- |
@@ -74,7 +74,7 @@ ratinginator/
 | username | VARCHAR(255) |     |                 |
 | password | VARCHAR(255) |     | (Hashed)        |
 
-# products
+ products
 
 | Field | Type           | Key | Extra           |
 | ----- | -------------- | --- | --------------- |
@@ -83,7 +83,7 @@ ratinginator/
 | price | DECIMAL(10, 2) |     |                 |
 | image | VARCHAR(255)   |     | URL to image    |
 
-# reviews
+ reviews
 
 | Field       | Type         | Key | Extra                      |
 | ----------- | ------------ | --- | -------------------------- |
@@ -96,8 +96,9 @@ ratinginator/
 | created\_at | TIMESTAMP    |     | DEFAULT CURRENT\_TIMESTAMP |
 
 
-🧩 ER Diagram
+# 🧩 ER Diagram
 
+```plaintext
 ┌────────────┐        ┌─────────────┐        ┌──────────────┐
 │  Users     │        │  Reviews    │        │  Products    │
 ├────────────┤        ├─────────────┤        ├──────────────┤
@@ -108,5 +109,18 @@ ratinginator/
                       │ media_path  │        └──────────────┘
                       │ created_at  │
                       └─────────────┘
+```
 
 ## ⚙️ How to Run
+
+# Backend
+
+```
+
+cd server
+npm install
+node index.js
+
+```
+
+**Runs on:** [http://localhost:5000](http://localhost:5000)
