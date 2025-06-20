@@ -31,32 +31,33 @@ Ratinginator is a full-stack web application that allows users to view products,
 
 ## 📦 Folder Structure
 
+## 🧩 Folder Structure
+
+```plaintext
 ratinginator/
 ├── client/                   # Frontend (React)
-│   ├── components/           # Reusable UI components (Navbar, StarRating, ProductCard, etc.)
-│   ├── pages/                # Page-level components (Home, Login, Signup, ProductReview)
-│   ├── App.jsx               # Main app with routes
-│   ├── api.js                # Axios instance with auth interceptor
-│   ├── index.css             # Tailwind CSS styles
-│   └── main.jsx              # React DOM rendering
+│   ├── components/           # Reusable UI (Navbar, ProductCard, StarRating, Modal)
+│   ├── pages/                # Route Pages (Home, Login, Signup, ProductReview)
+│   ├── App.jsx               # Route Management
+│   ├── api.js                # Axios config with token headers
+│   ├── index.css             # Tailwind styling
+│   └── main.jsx              # React root render
 │
-├── server/                   # Backend (Node.js + Express)
-│   ├── controllers/          # Logic for auth, product, and review routes
+├── server/                   # Backend (Node.js + Express + MySQL)
+│   ├── controllers/          # Business Logic
 │   │   ├── authController.js
 │   │   ├── productController.js
 │   │   └── reviewController.js
-│   ├── middleware/           # JWT verification middleware
+│   ├── middleware/           # JWT Auth Middleware
 │   │   └── authMiddleware.js
-│   ├── routes/               # Express route definitions
+│   ├── routes/               # API Endpoints
 │   │   ├── authRoutes.js
 │   │   ├── productRoutes.js
 │   │   └── reviewRoutes.js
-│   ├── uploads/              # Uploaded media (images/videos for reviews)
-│   ├── db.js                 # MySQL DB connection setup
-│   └── index.js              # Express server entry point
+│   ├── uploads/              # Uploaded media (images/videos)
+│   ├── db.js                 # MySQL connection pool
+│   └── index.js              # Entry point for Express server
 │
-├── .env                      # Environment variables
-├── package.json              # Project metadata and dependencies
-└── README.md                 # Project documentation
-
-
+├── .env                      # Environment variables (server)
+├── package.json              # Backend dependencies
+└── README.md                 # Project Documentation
