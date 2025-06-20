@@ -226,4 +226,9 @@ npm run dev
 | DELETE | `/api/reviews/:id`  | Delete review           |
 
 
+## Author 
+
+Built by Harsh Bajaj as a full-stack project for learning and evaluation.
+
+
 
