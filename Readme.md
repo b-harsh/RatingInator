@@ -6,6 +6,9 @@ A full-stack product review system built using **React**, **Node.js**, and **MyS
 
 ---
 
+https://github.com/user-attachments/assets/3b01587c-4ce6-4b47-8d24-fbf5583b95a6
+
+
 ## ✅ How the System Works
 
 ### 📦 Product Insertion
