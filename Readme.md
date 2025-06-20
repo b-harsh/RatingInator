@@ -29,8 +29,6 @@ Ratinginator is a full-stack web application that allows users to view products,
 
 ---
 
-## 📦 Folder Structure
-
 ## 🧩 Folder Structure
 
 ```plaintext
@@ -61,3 +59,41 @@ ratinginator/
 ├── .env                      # Environment variables (server)
 ├── package.json              # Backend dependencies
 └── README.md                 # Project Documentation
+
+
+##📊 Database Schema & ER Diagram
+
+📁 Tables
+
+# users
+
+| Field    | Type         | Key | Extra           |
+| -------- | ------------ | --- | --------------- |
+| id       | INT          | PK  | AUTO\_INCREMENT |
+| username | VARCHAR(255) |     |                 |
+| password | VARCHAR(255) |     | (Hashed)        |
+
+# products
+
+| Field | Type           | Key | Extra           |
+| ----- | -------------- | --- | --------------- |
+| id    | INT            | PK  | AUTO\_INCREMENT |
+| name  | VARCHAR(255)   |     |                 |
+| price | DECIMAL(10, 2) |     |                 |
+| image | VARCHAR(255)   |     | URL to image    |
+
+# reviews
+
+| Field       | Type         | Key | Extra                      |
+| ----------- | ------------ | --- | -------------------------- |
+| id          | INT          | PK  | AUTO\_INCREMENT            |
+| user\_id    | INT          | FK  | References `users.id`      |
+| product\_id | INT          | FK  | References `products.id`   |
+| rating      | INT (1 to 5) |     |                            |
+| review      | TEXT         |     |                            |
+| media\_path | VARCHAR(255) |     | path to uploaded media     |
+| created\_at | TIMESTAMP    |     | DEFAULT CURRENT\_TIMESTAMP |
+
+
+🧩 ER Diagram
+
