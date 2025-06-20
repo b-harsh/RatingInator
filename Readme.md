@@ -4,16 +4,99 @@ Ratinginator is a full-stack web application that allows users to view products,
 
 ---
 
-## 🚀 Features
+# 🛒 Product Review System
 
-- User Signup & Login (JWT-based)
-- Product listing with average ratings
-- Submit one review per product
-- Upload photo or video with review
-- Edit or delete your own review
-- Tag extraction from review content
-- Filter & sort reviews (rating, tags, date)
-- Protected routes and media hosting
+A full-stack product review system built using **React**, **Node.js**, and **MySQL** that enables users to view, rate, and review products with authentication and media upload support.
+
+---
+
+## ✅ How the System Works
+
+### 📦 Product Insertion
+Sample products are inserted into the MySQL `products` table. Each product includes:
+- `name`
+- `price`
+- `imageURL` (a valid image link)
+
+---
+
+### 🖥️ Product Display
+- Products are fetched from the backend API: `GET /api/products`.
+- Displayed on the React frontend homepage using clean, responsive card components.
+
+---
+
+### 🧾 Product Card Functionality
+Each product card displays:
+- Product image
+- Name
+- Price
+- Average rating
+
+Includes:
+- **"Rate Now"** button – opens a modal to submit a rating and review.
+- **"Reviews and Ratings"** button – navigates to a detailed page showing all reviews for that product.
+
+---
+
+### 🔐 Authentication
+
+Users can register and log in via:
+- `POST /api/auth/signup`
+- `POST /api/auth/login`
+
+**JWT (JSON Web Token)** is issued upon login and stored in `localStorage`, allowing access to protected routes.
+
+---
+
+### ✍️ Review Submission
+
+Authenticated users can submit:
+- A star rating (1–5)
+- Optional text review
+- Optional media upload (image or video)
+
+---
+
+### 💾 Backend Review Handling
+
+- Reviews are saved in the MySQL `reviews` table.
+- Uploaded media is stored in the backend `uploads/` directory.
+- Media is served statically at:  
+  `http://localhost:5000/uploads/<filename>`
+
+---
+
+### ✏️ Edit/Delete Review
+
+- Users can **edit** or **delete** their own reviews.
+- Edit/Delete buttons appear **only for the author** of the review.
+
+---
+
+### 📄 Review Page Features
+
+- **Sort by**:
+  - Newest
+  - Oldest
+  - Highest Rating
+  - Lowest Rating
+
+- **Filter by Rating**:
+  - 5★ to 1★
+
+- **Filter by Tags**:
+  - Extracted from keywords in reviews
+
+- **Clear Filters**:
+  - Resets all filters and sorting options
+
+---
+
+### 🔘 Rate Button Logic
+
+- If a user has already reviewed a product:
+  - The **"Rate Now"** button is disabled to prevent duplicate reviews.
 
 ---
 
